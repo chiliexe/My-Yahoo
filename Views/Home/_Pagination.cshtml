@@ -1,0 +1,29 @@
+
+<ul class="pagination center">
+    @if(Model.CurrentPage == 1){
+        <li class="disabled"><a class="disabled"><i class="material-icons">chevron_left</i></a></li>
+    }else {
+        int previousPage = Model.CurrentPage - 1;
+        <li class="waves-effect">
+            <a asp-action="Index" asp-route-page="@previousPage">
+                <i class="material-icons">chevron_left</i></a></li>
+
+    }
+    
+    @for(int i = 1; i <= Model.numPages; i++){
+        <li class="waves-effect">
+            <a asp-action="Index" asp-route-page="@i">@i</a>
+        </li>
+    }
+
+    @if(Model.CurrentPage == Model.numPages){
+        <li class="disabled"><a href="#!">
+            <i class="material-icons">chevron_right</i></a>
+        </li>
+    }else {
+        int nextPage = Model.CurrentPage + 1;
+        <li class="waves-effect"><a asp-action="Index" asp-route-page="@nextPage" >
+            <i class="material-icons">chevron_right</i></a>
+        </li>
+    }
+</ul>

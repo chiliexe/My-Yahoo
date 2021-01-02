@@ -1,0 +1,38 @@
+@model MyYahoo.Models.Answer
+
+@{
+    Question question = (Question) ViewData["question"];
+}
+<div class="container">
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title">
+                    <h4 class="center">@question.Title</h4>
+                </div>
+                <div class="card-content">
+                    <p>@question.Description</p>
+                </div>
+                <hr>
+
+                <h5 class="center">Responder</h5>
+            </div>
+            <div class="card-section">
+                
+                <div class="row">
+                    <form method="POST" class="col s12" asp-action="Answer" asp-route-id="@question.Id">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea asp-for="Content" class="materialize-textarea"></textarea>
+                                <label asp-for="Content">Área de texto</label>
+                            </div>
+                        </div>
+                        <input type="hidden" value="@question.Id" asp-for="QuestionId">
+                        <button class="btn waves-effect">Enviar</button>
+                        <a asp-action="Index" class="btn waves-effect red right">Voltar</a>
+                    </form>
+                </div>
+        
+            </div>
+        </div>
+    </div>

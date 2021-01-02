@@ -1,0 +1,17 @@
+.card .col a.btn {
+
+    margin-bottom: 5px;
+
+}
+
+.container .card .btn {
+    margin: 10px;
+}
+.pagination {
+
+    padding: 10px;
+}
+
+.pagination .active {
+    background-color: #187979 !important;
+}

@@ -1,0 +1,55 @@
+
+@{
+    Question question = Model;
+}
+<div class="container">
+
+        <div class="card">
+            <div class="card-content">
+                <a asp-action="Answer" asp-route-id="@question.Id" class="btn waves-effect"><i class="material-icons right">clear_all</i>Respodner</a>
+
+                <div class="card-title">
+                    <h4 class="center">@question.Title</h4>
+                </div>
+                <div class="card-content">
+                    <p>@question.Description</p>
+                </div>
+                <hr>
+
+                <h5 class="center">Respostas</h5>
+            </div>
+            <div class="card-section" id="respostas">
+
+                @{
+                    if(question.Answers.Count > 0)
+                    {
+                        question.Answers = question.Answers.OrderByDescending(e => e.Id).ToList();
+                        foreach(var item in question.Answers)
+                        {
+                            <div class="row">
+                                <div class="col s1"><img src="~/images/index.png" width="100%" alt=""></div>
+                                <div class="col s11">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <p>@item.Content</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }else
+                    {
+                        <div class="row">
+                            <div class="col s12">
+                                <p class="center" style="color: red;">Nenhuma resposta encontrada</p>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+
+        
+    </div>

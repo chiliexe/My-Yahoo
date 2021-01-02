@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>My_Yahoo</title>
+</head>
+<body class="brown lighten-4">
+    <nav class="teal darken-2">
+        <div class="nav-wrapper teal darken-2 container">
+            <a asp-action="Index" class="brand-logo right">My Yahoo</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a asp-action="Index">Início</a></li>
+                <li><a>Mais Vistas</a></li>
+                <li><a>Categorias</a></li>
+                <li><a asp-action="About">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    @RenderBody()
+
+
+   <script src="~/materialize/js/materialize.min.js"></script>
+</body>
+</html>

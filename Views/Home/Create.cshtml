@@ -1,0 +1,32 @@
+@model MyYahoo.Models.Question
+
+<div class="container">
+
+        <div class="card">
+
+            <div class="card-title">
+                <h5 class="center">Conte-nos, qual sua dúvida?</h5>
+            </div>
+
+            <div class="card-content">
+                <form method="POST" asp-action="Create">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label asp-for="Title">Título</label>
+                            <input asp-for="Title" type="text" class="validate">
+                            <span asp-validation-for="Title" style="color: red;"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea asp-for="Description" id="Description" class="materialize-textarea"></textarea>
+                            <label asp-for="Description">Descreva sua pergunta</label>
+                            <span asp-validation-for="Description" style="color: red;"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn waves-effect">Enviar</button>
+                    <a asp-action="Index" class="btn waves-effect red right">Voltar</a>
+                </form>
+            </div>
+        </div>
+    </div>
